@@ -150,7 +150,7 @@ def run_post(argv):
         #Read Stations
         tarFile = ofsPath + 'etss.t' + fcstHour + 'z.csv_tar'
         stations = csdlpy.etss.readStations (tarFile, verbose=1)
-        plotPath = args.outputDir + 'etss-ts-'
+        plotPath = args.outputDir + 'ts-'
         plot.stations (stations, pp, titleStr, plotPath, args)
 
     

@@ -227,7 +227,7 @@ def stations (stations, pp, titleStr, plotPath, args):
             ax2.plot([],[])
 
             plt.tight_layout()
-            figFile = plotPath + str(n+1).zfill(3) + '.png'
+            figFile = plotPath + stations[n]['nosid'] + '.png'
             plt.savefig(figFile)
             plt.close()
             csdlpy.transfer.upload(figFile, args.ftpLogin, args.ftpPath)

@@ -161,7 +161,6 @@ def run_post(argv):
 if __name__ == "__main__":
 
     timestamp()
-    print 'HELLO!'
     run_post (sys.argv[1:])
     timestamp()
     

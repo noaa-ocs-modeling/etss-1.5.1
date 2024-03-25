@@ -23,7 +23,7 @@ def findLatestCycle (dirMask):
     latestDir = max(dirs, key=os.path.getctime)    
     D = os.path.basename(latestDir).split('.')[-1]
 
-    files = glob.glob(latestDir + '/*.csv_tar')
+    files = glob.glob(latestDir + '/*.csv.tar.gz')
     latestFile = max(files)
 
     F = os.path.basename(latestFile)
@@ -148,7 +148,7 @@ def run_post(argv):
             fcstMonth + '/' + fcstDay + '/' + fcstYear + ' ' +fcstHour + 'UTC'
         print '[info]: ', titleStr
         #Read Stations
-        tarFile = ofsPath + 'etss.t' + fcstHour + 'z.csv_tar'
+        tarFile = ofsPath + 'etss.t' + fcstHour + 'z.csv.tar.gz'
         stations = csdlpy.etss.readStations (tarFile, verbose=1)
         plotPath = args.outputDir + 'ts-'
         plot.stations (stations, pp, titleStr, plotPath, args)
